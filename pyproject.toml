@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "tfe-reconstructor"
+version = "0.1.0"
+description = "Binary-to-C reconstruction pipeline via enriched CFG"
+requires-python = ">=3.10"
+dependencies = [
+    "angr>=9.2",
+    "capstone>=5.0",
+    "pyelftools>=0.31",
+    "jsonschema>=4.0",
+]
+
+[project.scripts]
+reconstructor = "src.cli.main:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "flake8>=7.0",
+    "flake8-bugbear",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+# ---------------------------------------------------------------------------
+# pytest
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+# ---------------------------------------------------------------------------
+# flake8 se configura en .flake8 (no soporta pyproject.toml directamente)
+# ---------------------------------------------------------------------------

@@ -1,0 +1,598 @@
+{
+  "binario": "data/binarios/syscalls",
+  "arquitectura": "AMD64",
+  "entry_point": "0x401020",
+  "funciones": {
+    "0x401041": {
+      "nombre": "sub_401041",
+      "bloques": {
+        "0x401041": {
+          "size": 1,
+          "instrucciones": [
+            {
+              "addr": "0x401041",
+              "mnemonic": "hlt",
+              "operands": "",
+              "size": 1
+            }
+          ]
+        }
+      },
+      "aristas": [],
+      "llama_a_externas": []
+    },
+    "0x401042": {
+      "nombre": "sub_401042",
+      "bloques": {
+        "0x401042": {
+          "size": 14,
+          "instrucciones": [
+            {
+              "addr": "0x401042",
+              "mnemonic": "nop",
+              "operands": "word ptr cs:[rax + rax]",
+              "size": 10
+            },
+            {
+              "addr": "0x40104c",
+              "mnemonic": "nop",
+              "operands": "dword ptr [rax]",
+              "size": 4
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x401042",
+          "dst": "0x401050",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x401051": {
+      "nombre": "sub_401051",
+      "bloques": {
+        "0x401051": {
+          "size": 15,
+          "instrucciones": [
+            {
+              "addr": "0x401051",
+              "mnemonic": "nop",
+              "operands": "word ptr cs:[rax + rax]",
+              "size": 10
+            },
+            {
+              "addr": "0x40105b",
+              "mnemonic": "nop",
+              "operands": "dword ptr [rax + rax]",
+              "size": 5
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x401051",
+          "dst": "0x401060",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x401060": {
+      "nombre": "deregister_tm_clones",
+      "bloques": {
+        "0x401060": {
+          "size": 13,
+          "instrucciones": [
+            {
+              "addr": "0x401060",
+              "mnemonic": "mov",
+              "operands": "eax, 0x404010",
+              "size": 5
+            },
+            {
+              "addr": "0x401065",
+              "mnemonic": "cmp",
+              "operands": "rax, 0x404010",
+              "size": 6
+            },
+            {
+              "addr": "0x40106b",
+              "mnemonic": "je",
+              "operands": "0x401080",
+              "size": 2
+            }
+          ]
+        },
+        "0x401080": {
+          "size": 1,
+          "instrucciones": [
+            {
+              "addr": "0x401080",
+              "mnemonic": "ret",
+              "operands": "",
+              "size": 1
+            }
+          ]
+        },
+        "0x40106d": {
+          "size": 10,
+          "instrucciones": [
+            {
+              "addr": "0x40106d",
+              "mnemonic": "mov",
+              "operands": "eax, 0",
+              "size": 5
+            },
+            {
+              "addr": "0x401072",
+              "mnemonic": "test",
+              "operands": "rax, rax",
+              "size": 3
+            },
+            {
+              "addr": "0x401075",
+              "mnemonic": "je",
+              "operands": "0x401080",
+              "size": 2
+            }
+          ]
+        },
+        "0x401077": {
+          "size": 7,
+          "instrucciones": [
+            {
+              "addr": "0x401077",
+              "mnemonic": "mov",
+              "operands": "edi, 0x404010",
+              "size": 5
+            },
+            {
+              "addr": "0x40107c",
+              "mnemonic": "jmp",
+              "operands": "rax",
+              "size": 2
+            }
+          ]
+        },
+        "0x40107e": {
+          "size": 2,
+          "instrucciones": [
+            {
+              "addr": "0x40107e",
+              "mnemonic": "nop",
+              "operands": "",
+              "size": 2
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x401060",
+          "dst": "0x401080",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x401060",
+          "dst": "0x40106d",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x40106d",
+          "dst": "0x401080",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x40106d",
+          "dst": "0x401077",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x401077",
+          "dst": "0x601050",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x40107e",
+          "dst": "0x401080",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x401081": {
+      "nombre": "sub_401081",
+      "bloques": {
+        "0x401081": {
+          "size": 15,
+          "instrucciones": [
+            {
+              "addr": "0x401081",
+              "mnemonic": "nop",
+              "operands": "word ptr cs:[rax + rax]",
+              "size": 11
+            },
+            {
+              "addr": "0x40108c",
+              "mnemonic": "nop",
+              "operands": "dword ptr [rax]",
+              "size": 4
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x401081",
+          "dst": "0x401090",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x401090": {
+      "nombre": "register_tm_clones",
+      "bloques": {
+        "0x401090": {
+          "size": 31,
+          "instrucciones": [
+            {
+              "addr": "0x401090",
+              "mnemonic": "mov",
+              "operands": "esi, 0x404010",
+              "size": 5
+            },
+            {
+              "addr": "0x401095",
+              "mnemonic": "sub",
+              "operands": "rsi, 0x404010",
+              "size": 7
+            },
+            {
+              "addr": "0x40109c",
+              "mnemonic": "mov",
+              "operands": "rax, rsi",
+              "size": 3
+            },
+            {
+              "addr": "0x40109f",
+              "mnemonic": "shr",
+              "operands": "rsi, 0x3f",
+              "size": 4
+            },
+            {
+              "addr": "0x4010a3",
+              "mnemonic": "sar",
+              "operands": "rax, 3",
+              "size": 4
+            },
+            {
+              "addr": "0x4010a7",
+              "mnemonic": "add",
+              "operands": "rsi, rax",
+              "size": 3
+            },
+            {
+              "addr": "0x4010aa",
+              "mnemonic": "sar",
+              "operands": "rsi, 1",
+              "size": 3
+            },
+            {
+              "addr": "0x4010ad",
+              "mnemonic": "je",
+              "operands": "0x4010c0",
+              "size": 2
+            }
+          ]
+        },
+        "0x4010c0": {
+          "size": 1,
+          "instrucciones": [
+            {
+              "addr": "0x4010c0",
+              "mnemonic": "ret",
+              "operands": "",
+              "size": 1
+            }
+          ]
+        },
+        "0x4010af": {
+          "size": 10,
+          "instrucciones": [
+            {
+              "addr": "0x4010af",
+              "mnemonic": "mov",
+              "operands": "eax, 0",
+              "size": 5
+            },
+            {
+              "addr": "0x4010b4",
+              "mnemonic": "test",
+              "operands": "rax, rax",
+              "size": 3
+            },
+            {
+              "addr": "0x4010b7",
+              "mnemonic": "je",
+              "operands": "0x4010c0",
+              "size": 2
+            }
+          ]
+        },
+        "0x4010b9": {
+          "size": 7,
+          "instrucciones": [
+            {
+              "addr": "0x4010b9",
+              "mnemonic": "mov",
+              "operands": "edi, 0x404010",
+              "size": 5
+            },
+            {
+              "addr": "0x4010be",
+              "mnemonic": "jmp",
+              "operands": "rax",
+              "size": 2
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x401090",
+          "dst": "0x4010c0",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x401090",
+          "dst": "0x4010af",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x4010af",
+          "dst": "0x4010c0",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x4010af",
+          "dst": "0x4010b9",
+          "tipo": "transition"
+        },
+        {
+          "src": "0x4010b9",
+          "dst": "0x601050",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x4010c1": {
+      "nombre": "sub_4010c1",
+      "bloques": {
+        "0x4010c1": {
+          "size": 15,
+          "instrucciones": [
+            {
+              "addr": "0x4010c1",
+              "mnemonic": "nop",
+              "operands": "word ptr cs:[rax + rax]",
+              "size": 11
+            },
+            {
+              "addr": "0x4010cc",
+              "mnemonic": "nop",
+              "operands": "dword ptr [rax]",
+              "size": 4
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x4010c1",
+          "dst": "0x4010d0",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x4010ef": {
+      "nombre": "sub_4010ef",
+      "bloques": {
+        "0x4010ef": {
+          "size": 1,
+          "instrucciones": [
+            {
+              "addr": "0x4010ef",
+              "mnemonic": "nop",
+              "operands": "",
+              "size": 1
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x4010ef",
+          "dst": "0x4010f0",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x4010f1": {
+      "nombre": "sub_4010f1",
+      "bloques": {
+        "0x4010f1": {
+          "size": 15,
+          "instrucciones": [
+            {
+              "addr": "0x4010f1",
+              "mnemonic": "nop",
+              "operands": "word ptr cs:[rax + rax]",
+              "size": 11
+            },
+            {
+              "addr": "0x4010fc",
+              "mnemonic": "nop",
+              "operands": "dword ptr [rax]",
+              "size": 4
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x4010f1",
+          "dst": "0x401100",
+          "tipo": "transition"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x401106": {
+      "nombre": "main",
+      "bloques": {
+        "0x401106": {
+          "size": 36,
+          "instrucciones": [
+            {
+              "addr": "0x401106",
+              "mnemonic": "push",
+              "operands": "rbp",
+              "size": 1
+            },
+            {
+              "addr": "0x401107",
+              "mnemonic": "mov",
+              "operands": "rbp, rsp",
+              "size": 3
+            },
+            {
+              "addr": "0x40110a",
+              "mnemonic": "lea",
+              "operands": "rax, [rip + 0xef3]",
+              "size": 7
+            },
+            {
+              "addr": "0x401111",
+              "mnemonic": "mov",
+              "operands": "qword ptr [rbp - 8], rax",
+              "size": 4
+            },
+            {
+              "addr": "0x401115",
+              "mnemonic": "mov",
+              "operands": "eax, 1",
+              "size": 5
+            },
+            {
+              "addr": "0x40111a",
+              "mnemonic": "mov",
+              "operands": "edi, 1",
+              "size": 5
+            },
+            {
+              "addr": "0x40111f",
+              "mnemonic": "mov",
+              "operands": "rsi, qword ptr [rbp - 8]",
+              "size": 4
+            },
+            {
+              "addr": "0x401123",
+              "mnemonic": "mov",
+              "operands": "edx, 0x11",
+              "size": 5
+            },
+            {
+              "addr": "0x401128",
+              "mnemonic": "syscall",
+              "operands": "",
+              "size": 2
+            }
+          ]
+        },
+        "0x40112a": {
+          "size": 11,
+          "instrucciones": [
+            {
+              "addr": "0x40112a",
+              "mnemonic": "mov",
+              "operands": "qword ptr [rbp - 0x10], rax",
+              "size": 4
+            },
+            {
+              "addr": "0x40112e",
+              "mnemonic": "mov",
+              "operands": "eax, 0",
+              "size": 5
+            },
+            {
+              "addr": "0x401133",
+              "mnemonic": "pop",
+              "operands": "rbp",
+              "size": 1
+            },
+            {
+              "addr": "0x401134",
+              "mnemonic": "ret",
+              "operands": "",
+              "size": 1
+            }
+          ]
+        }
+      },
+      "aristas": [
+        {
+          "src": "0x401106",
+          "dst": "0x800182",
+          "tipo": "syscall"
+        },
+        {
+          "src": "0x401106",
+          "dst": "0x40112a",
+          "tipo": "fake_return"
+        }
+      ],
+      "llama_a_externas": []
+    },
+    "0x601050": {
+      "nombre": "UnresolvableJumpTarget",
+      "bloques": {
+        "0x601050": {
+          "size": 0,
+          "instrucciones": []
+        }
+      },
+      "aristas": [],
+      "llama_a_externas": []
+    },
+    "0x601058": {
+      "nombre": "UnresolvableCallTarget",
+      "bloques": {
+        "0x601058": {
+          "size": 0,
+          "instrucciones": []
+        }
+      },
+      "aristas": [],
+      "llama_a_externas": []
+    },
+    "0x800182": {
+      "nombre": "write",
+      "bloques": {
+        "0x800182": {
+          "size": 0,
+          "instrucciones": []
+        }
+      },
+      "aristas": [],
+      "llama_a_externas": []
+    }
+  }
+}
