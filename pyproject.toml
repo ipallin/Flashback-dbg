@@ -1,21 +1,22 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "tfe-reconstructor"
+name = "flashback"
 version = "0.1.0"
-description = "Binary-to-C reconstruction pipeline via enriched CFG"
+description = "Binary-to-C reconstruction with bidirectional traceability"
 requires-python = ">=3.10"
 dependencies = [
-    "angr>=9.2",
     "capstone>=5.0",
+    "lief>=0.14",
+    "networkx>=3.0",
     "pyelftools>=0.31",
     "jsonschema>=4.0",
 ]
 
 [project.scripts]
-reconstructor = "src.cli.main:main"
+flashback = "flashback.ui.cli:main"
 
 [project.optional-dependencies]
 dev = [
@@ -27,15 +28,8 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["src*"]
+include = ["flashback*"]
 
-# ---------------------------------------------------------------------------
-# pytest
-# ---------------------------------------------------------------------------
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v --tb=short"
-
-# ---------------------------------------------------------------------------
-# flake8 se configura en .flake8 (no soporta pyproject.toml directamente)
-# ---------------------------------------------------------------------------
